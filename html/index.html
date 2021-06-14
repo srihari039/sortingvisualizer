@@ -11,16 +11,11 @@
 </head>
 <body>
 	
+	<!-- container for sorting options -->
 	<div class="sortingoptions">
+		<!-- sub container for positioning -->
 		<div class="button-container">
-
-			<!-- <div class="wrapper">
-				<div class="btn">
-					<div class="side default-side">Bubble Sort</div>
-					<div class="side hover-side">Surprise!</div>
-				</div>
-			  </div> -->
-
+			<!-- buttons -->
 			<button type="button" class="btn btn-outline-primary btns bouncy bubble-sort">Bubble Sort</button>
 			<button type="button" class="btn btn-outline-primary btns bouncy insertion-sort">Insertion Sort</button>
 			<button type="button" class="btn btn-outline-primary btns bouncy selection-sort">Selection Sort</button>
@@ -29,28 +24,31 @@
 		</div>
 	</div>
 
+	<!-- container for the manipulation section -->
 	<div class="manipulation">
+
+		<!-- buttons and inputs -->
+
 		<button type="button" class="btn btn-outline-primary btns createArray">New Array</button>
 
 		<button type="button" class="btn btn-outline-primary btns arraySizeBtn">Array Size</button>
 		<input class='arraySize' type="range" value=30 min=2 max=100></input>
-			<!-- </div> -->
+
 		<button type="button" class="btn btn-outline-primary btns sortingSpeedBtn">Sorting Speed</button>
 		<input class='sortingSpeed' type="range" value=14 min=2 max=50></input>
 
-		<!-- <button type="button" class="fast-fw btn btn-outline-primary btns">Fast Forward sort</button> -->
-
-		<!-- </div> -->
 	</div>
 
-	<div class="bars">
-		
-	</div>
 
+	<!-- container for bar field -->
+	<div class="bars"></div>
+
+	<!-- container for description -->
 	<div class="algos">
-		<!-- algos comes here -->
+		<!-- description comes here -->
 	</div>
 
+	<!-- source tags -->
 	<script src="../js/bootstrap/bootstrap.min.js"></script>
 	<script src="../js/utility/index.js"></script>
 	<script src="../js/utility/sortingOptions/bubble-sort.js"></script>
