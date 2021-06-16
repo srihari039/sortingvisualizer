@@ -4,9 +4,6 @@
 
 ## Directories
 
-* **html**  
-  All the html files are stored in this directory
-
 * **js**  
   All the source files are stored in this directory
 
@@ -17,8 +14,7 @@
 Main-|
      | - README.md
      |
-     | - html - |
-     |          | - index.html(main)
+     | - index.html(main)
      |
      | - js - |
      |        | - utility - | 
