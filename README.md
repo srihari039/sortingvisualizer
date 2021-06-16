@@ -4,13 +4,13 @@
 
 ## Directories
 
-* **html**
+* **html**  
   All the html files are stored in this directory
 
-* **js**
+* **js**  
   All the source files are stored in this directory
 
-* **styles**
+* **styles**  
   All the styling sheets are stored in this directory
 
 ```bash
