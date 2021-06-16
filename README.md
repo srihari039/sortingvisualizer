@@ -10,6 +10,8 @@
 * **styles**  
   All the styling sheets are stored in this directory
 
+## File Navigation
+
 ```bash
 Main-|
      | - README.md
