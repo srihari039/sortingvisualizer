@@ -36,7 +36,7 @@ Main-|
 
 ## Layout
 
-![layout](../sortingvisualizer/styles/images/layout.png)
+![layout](styles/images/layout.png)
 
 * There will be the sorting options(buttons) on the top panel of the window.
   
@@ -56,7 +56,7 @@ Main-|
 
 ## While Running
 
-![layout](../sortingvisualizer/styles/images/side-panel.png)
+![layout](styles/images/side-panel.png)
 
 * We can see the blob comming from the left of window to assist what's happening with algorithm.
   
