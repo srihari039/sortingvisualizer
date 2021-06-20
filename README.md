@@ -1,5 +1,7 @@
 # Sorting Visualizer
 
+website link: [https://sriharimalla.github.io/sortingvisualizer/]
+
 ## JavaScript beginner friendly project
 
 ## Directories
