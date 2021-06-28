@@ -127,6 +127,16 @@ const waitForTime = (time) => {
 	});
 }
 
+const animateSortingCompletion = async (bars) => {
+
+	for(let i = 0 ; i < sizeOfArray.value ; i++){
+		bars[i].classList.add('isSortedBar');
+		await bubbleUpAfterSorted();
+		bars[i].style.backgroundColor = `greenyellow`
+		bars[i].classList.remove('isSortedBar');
+	}
+}
+
 //function calls
 createBars();
 

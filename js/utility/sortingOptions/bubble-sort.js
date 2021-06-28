@@ -1,91 +1,81 @@
 async function bubbleSort() {
+  let isSorted = false;
+  let i = 0;
+  let counter = 0;
 
-	let isSorted = false;
-	let i = 0;
-	let counter = 0;
+  const bars = document.querySelectorAll(".bar");
+  bars.forEach((bar) => (bar.style.backgroundColor = `purple`));
 
-	const bars = document.querySelectorAll('.bar');
-	bars.forEach(bar => bar.style.backgroundColor = `purple`);
+  while (!isSorted) {
+    isSorted = true;
 
-	while(!isSorted){
+    for (i = 0; i < sizeOfArray.value - 1 - counter; i++) {
+      bars[i].style.backgroundColor = `red`;
+      bars[i + 1].style.backgroundColor = `red`;
 
-		isSorted = true;
+      await sleepForAnimation();
 
-		for(i = 0 ; i < sizeOfArray.value - 1 - counter ; i++){
+      if (parseInt(bars[i].style.height) > parseInt(bars[i + 1].style.height)) {
+        bars[i].style.backgroundColor = `greenyellow`;
+        bars[i + 1].style.backgroundColor = `greenyellow`;
 
-			bars[i].style.backgroundColor = `red`;
-			bars[i+1].style.backgroundColor = `red`;
-		
-			await sleepForAnimation();
+        await sleepForAnimation();
+        swapDomBars(bars, i, i + 1);
+        await sleepForAnimation();
 
-			if(parseInt(bars[i].style.height) > parseInt(bars[i+1].style.height)){
+        bars[i].style.backgroundColor = `purple`;
+        bars[i + 1].style.backgroundColor = `purple`;
+        isSorted = false;
+      }
 
-				bars[i].style.backgroundColor = `greenyellow`;
-				bars[i+1].style.backgroundColor = `greenyellow`;
+      await sleepForAnimation();
 
-				await sleepForAnimation();
-				swapDomBars(bars,i,i+1);
-				await sleepForAnimation();
+      bars[i].style.backgroundColor = `purple`;
+      bars[i + 1].style.backgroundColor = `purple`;
+    }
 
-				bars[i].style.backgroundColor = `purple`;
-				bars[i+1].style.backgroundColor = `purple`;
-				isSorted = false;
-			}
+    bars[sizeOfArray.value - 1 - counter].style.backgroundColor = `deepskyblue`;
+    counter++;
+  }
 
-			await sleepForAnimation();
+  counter = sizeOfArray.value - counter;
+  while (counter--) {
+    bars[counter].style.backgroundColor = `deepskyblue`;
+  }
 
-			bars[i].style.backgroundColor = `purple`;
-			bars[i+1].style.backgroundColor = `purple`;
-		}
+  algorithmPopup.classList.remove("popOut");
 
-		bars[sizeOfArray.value - 1 - counter].style.backgroundColor = `deepskyblue`;
-		counter++;
-	}
+  await animateSortingCompletion(bars);
 
-	counter = sizeOfArray.value - counter;
-	while(counter--){
-		bars[counter].style.backgroundColor = `deepskyblue`;
-	}
-
-	algorithmPopup.classList.remove('popOut');
-
-	for(let i = 0 ; i < sizeOfArray.value ; i++){
-		bars[i].classList.add('isSortedBar');
-		await bubbleUpAfterSorted();
-		bars[i].style.backgroundColor = `greenyellow`
-		bars[i].classList.remove('isSortedBar');
-	}
-
-	await waitForTime(1000);
-	handleChangeSize();
+  await waitForTime(1000);
+  handleChangeSize();
 }
 
 //bubble sort button event listener
-bubbleSortBtn.addEventListener('click', async () => {
-	changeStatusOfButton(generateArrayButton);
-	changeStatusOfButton(sizeOfArray);
-	changeStatusOfButton(insertionSortBtn);
-	changeStatusOfButton(selectionSortBtn);
-	changeStatusOfButton(quickSortBtn);
-	changeStatusOfButton(mergeSortBtn);
-	bubbleSortBtn.classList.add('btn-warning');
-	bubbleSortBtn.classList.add('insortingProcess');
-	algorithmPopup.classList.add('popOut');
-	algorithmPopup.innerHTML = bubbleSortAlgo;
-	await bubbleSort();
-	bubbleSortBtn.classList.remove('insortingProcess');
-	bubbleSortBtn.classList.remove('btn-warning');
-	algorithmPopup.innerHTML = ``;
-	changeStatusOfButton(mergeSortBtn);
-	changeStatusOfButton(quickSortBtn);
-	changeStatusOfButton(selectionSortBtn);
-	changeStatusOfButton(insertionSortBtn);
-	changeStatusOfButton(sizeOfArray);
-	changeStatusOfButton(generateArrayButton);
+bubbleSortBtn.addEventListener("click", async () => {
+  changeStatusOfButton(generateArrayButton);
+  changeStatusOfButton(sizeOfArray);
+  changeStatusOfButton(insertionSortBtn);
+  changeStatusOfButton(selectionSortBtn);
+  changeStatusOfButton(quickSortBtn);
+  changeStatusOfButton(mergeSortBtn);
+  bubbleSortBtn.classList.add("btn-warning");
+  bubbleSortBtn.classList.add("insortingProcess");
+  algorithmPopup.classList.add("popOut");
+  algorithmPopup.innerHTML = bubbleSortAlgo;
+  await bubbleSort();
+  bubbleSortBtn.classList.remove("insortingProcess");
+  bubbleSortBtn.classList.remove("btn-warning");
+  algorithmPopup.innerHTML = ``;
+  changeStatusOfButton(mergeSortBtn);
+  changeStatusOfButton(quickSortBtn);
+  changeStatusOfButton(selectionSortBtn);
+  changeStatusOfButton(insertionSortBtn);
+  changeStatusOfButton(sizeOfArray);
+  changeStatusOfButton(generateArrayButton);
 });
 
-let bubbleSortAlgo = 
-`
+let bubbleSortAlgo = `
 	<h4> Bubble Sort </h4>
 	<strong> Time Complexity : quadratic</strong>
 	<strong>Colour Indication : </strong>

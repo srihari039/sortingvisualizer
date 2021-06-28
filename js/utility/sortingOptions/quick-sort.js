@@ -57,12 +57,7 @@ async function quickSort(){
 
 	algorithmPopup.classList.remove('popOut');
 
-	for(let i = 0 ; i < sizeOfArray.value ; i++){
-		bars[i].classList.add('isSortedBar');
-		await bubbleUpAfterSorted();
-		bars[i].style.backgroundColor = `greenyellow`
-		bars[i].classList.remove('isSortedBar');
-	}
+	await animateSortingCompletion(bars);
 
 	await waitForTime(1000);
 	handleChangeSize();
