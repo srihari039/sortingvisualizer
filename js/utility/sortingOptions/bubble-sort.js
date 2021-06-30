@@ -53,26 +53,14 @@ async function bubbleSort() {
 
 //bubble sort button event listener
 bubbleSortBtn.addEventListener("click", async () => {
-  changeStatusOfButton(generateArrayButton);
-  changeStatusOfButton(sizeOfArray);
-  changeStatusOfButton(insertionSortBtn);
-  changeStatusOfButton(selectionSortBtn);
-  changeStatusOfButton(quickSortBtn);
-  changeStatusOfButton(mergeSortBtn);
-  bubbleSortBtn.classList.add("btn-warning");
-  bubbleSortBtn.classList.add("insortingProcess");
-  algorithmPopup.classList.add("popOut");
+
+  handleButtonStatus(bubbleSortBtn);
+  popOutIndicator(bubbleSortBtn);
   algorithmPopup.innerHTML = bubbleSortAlgo;
   await bubbleSort();
-  bubbleSortBtn.classList.remove("insortingProcess");
-  bubbleSortBtn.classList.remove("btn-warning");
-  algorithmPopup.innerHTML = ``;
-  changeStatusOfButton(mergeSortBtn);
-  changeStatusOfButton(quickSortBtn);
-  changeStatusOfButton(selectionSortBtn);
-  changeStatusOfButton(insertionSortBtn);
-  changeStatusOfButton(sizeOfArray);
-  changeStatusOfButton(generateArrayButton);
+  closePopOut(bubbleSortBtn);
+  handleButtonStatus(bubbleSortBtn);
+
 });
 
 let bubbleSortAlgo = `

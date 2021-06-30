@@ -48,26 +48,13 @@ async function insertionSort() {
 
 //insertion sort button event listener
 insertionSortBtn.addEventListener('click', async () => {
-	changeStatusOfButton(generateArrayButton);
-	changeStatusOfButton(sizeOfArray);
-	changeStatusOfButton(bubbleSortBtn);
-	changeStatusOfButton(selectionSortBtn);
-	changeStatusOfButton(quickSortBtn);
-	changeStatusOfButton(mergeSortBtn);
-	insertionSortBtn.classList.add('btn-warning');
-	insertionSortBtn.classList.add('insortingProcess');
-	algorithmPopup.classList.add('popOut');
+
+	handleButtonStatus(insertionSortBtn);
+	popOutIndicator(insertionSortBtn);
 	algorithmPopup.innerHTML = insertionSortAlgo;
 	await insertionSort();
-	insertionSortBtn.classList.remove('insortingProcess');
-	insertionSortBtn.classList.remove('btn-warning');	
-	algorithmPopup.innerHTML = ``;
-	changeStatusOfButton(mergeSortBtn);
-	changeStatusOfButton(quickSortBtn);
-	changeStatusOfButton(selectionSortBtn);
-	changeStatusOfButton(bubbleSortBtn);
-	changeStatusOfButton(sizeOfArray);
-	changeStatusOfButton(generateArrayButton);
+	closePopOut(insertionSortBtn);
+	handleButtonStatus(insertionSortBtn);
 });
 
 let insertionSortAlgo = 

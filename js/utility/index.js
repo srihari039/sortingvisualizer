@@ -15,9 +15,36 @@ document.querySelector('.sortingSpeedBtn').disabled = true;
 //function declarations
 
 
-//function to change status of buttons
+//function to change status of a button
 const changeStatusOfButton = (button) => {
 	button.disabled = !button.disabled;
+}
+
+//function which changes status of buttons
+const handleButtonStatus = (button) => {
+	changeStatusOfButton(generateArrayButton);
+	changeStatusOfButton(sizeOfArray);
+	const buttons = document.querySelectorAll('.bouncy');
+
+	for(let btn of buttons){
+		if(btn === button)
+		continue;
+		changeStatusOfButton(btn);
+	}
+}
+
+//function for popping out indicator
+const popOutIndicator = (button) => {
+	button.classList.add("btn-warning");
+	button.classList.add("insortingProcess");
+	algorithmPopup.classList.add("popOut");
+}
+
+const closePopOut = (button) => {
+	button.classList.remove("insortingProcess");
+	button.classList.remove("btn-warning");
+	algorithmPopup.innerHTML = ``;
+
 }
 
 //function to create bars 
