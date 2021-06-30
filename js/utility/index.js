@@ -44,7 +44,6 @@ const closePopOut = (button) => {
 	button.classList.remove("insortingProcess");
 	button.classList.remove("btn-warning");
 	algorithmPopup.innerHTML = ``;
-
 }
 
 //function to create bars 
