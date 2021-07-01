@@ -1,9 +1,8 @@
-async function bubbleSort() {
+async function bubbleSort(bars) {
   let isSorted = false;
   let i = 0;
   let counter = 0;
 
-  const bars = document.querySelectorAll(".bar");
   bars.forEach((bar) => (bar.style.backgroundColor = `purple`));
 
   while (!isSorted) {
@@ -57,7 +56,7 @@ bubbleSortBtn.addEventListener("click", async () => {
   handleButtonStatus(bubbleSortBtn);
   popOutIndicator(bubbleSortBtn);
   algorithmPopup.innerHTML = bubbleSortAlgo;
-  await bubbleSort();
+  await bubbleSort(getBars());
   closePopOut(bubbleSortBtn);
   handleButtonStatus(bubbleSortBtn);
 

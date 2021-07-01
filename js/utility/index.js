@@ -46,6 +46,10 @@ const closePopOut = (button) => {
 	algorithmPopup.innerHTML = ``;
 }
 
+const getBars = () => {
+	return document.querySelectorAll('.bar');
+}
+
 //function to create bars 
 const createBars = (size = 30) => {
 

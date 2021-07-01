@@ -65,26 +65,14 @@ async function quickSort(){
 
 //quicksort button eventlistener
 quickSortBtn.addEventListener('click', async () => {
-	changeStatusOfButton(generateArrayButton);
-	changeStatusOfButton(sizeOfArray);
-	changeStatusOfButton(bubbleSortBtn);
-	changeStatusOfButton(insertionSortBtn);
-	changeStatusOfButton(selectionSortBtn);
-	changeStatusOfButton(mergeSortBtn);
-	quickSortBtn.classList.add('btn-warning');
-	quickSortBtn.classList.add('insortingProcess');
-	algorithmPopup.classList.add('popOut');
+
+	handleButtonStatus(quickSortBtn);
+	popOutIndicator(quickSortBtn);
 	algorithmPopup.innerHTML = quickSortAlgo;
 	await quickSort();
-	quickSortBtn.classList.remove('insortingProcess');
-	quickSortBtn.classList.remove('btn-warning');
-	algorithmPopup.innerHTML = ``;
-	changeStatusOfButton(mergeSortBtn);
-	changeStatusOfButton(selectionSortBtn);
-	changeStatusOfButton(insertionSortBtn);
-	changeStatusOfButton(bubbleSortBtn);
-	changeStatusOfButton(sizeOfArray);
-	changeStatusOfButton(generateArrayButton);
+	closePopOut(quickSortBtn);
+	handleButtonStatus(quickSortBtn);
+
 });
 
 

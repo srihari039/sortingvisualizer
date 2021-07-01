@@ -69,26 +69,13 @@ async function mergeSort() {
 
 //mergesort button event listener
 mergeSortBtn.addEventListener("click", async () => {
-  changeStatusOfButton(generateArrayButton);
-  changeStatusOfButton(sizeOfArray);
-  changeStatusOfButton(bubbleSortBtn);
-  changeStatusOfButton(insertionSortBtn);
-  changeStatusOfButton(selectionSortBtn);
-  changeStatusOfButton(quickSortBtn);
-  mergeSortBtn.classList.add("btn-warning");
-  mergeSortBtn.classList.add("insortingProcess");
-  algorithmPopup.classList.add("popOut");
+
+  handleButtonStatus(mergeSortBtn);
+  popOutIndicator(mergeSortBtn);
   algorithmPopup.innerHTML = mergeSortAlgo;
   await mergeSort();
-  mergeSortBtn.classList.remove("insortingProcess");
-  mergeSortBtn.classList.remove("btn-warning");
-  algorithmPopup.innerHTML = ``;
-  changeStatusOfButton(quickSortBtn);
-  changeStatusOfButton(selectionSortBtn);
-  changeStatusOfButton(insertionSortBtn);
-  changeStatusOfButton(bubbleSortBtn);
-  changeStatusOfButton(sizeOfArray);
-  changeStatusOfButton(generateArrayButton);
+  closePopOut(mergeSortBtn);
+  handleButtonStatus(mergeSortBtn);
 });
 
 let mergeSortAlgo = `

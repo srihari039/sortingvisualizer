@@ -56,26 +56,14 @@ async function selectionSort() {
 
 //selection sort button event listener
 selectionSortBtn.addEventListener('click', async () => {
-	changeStatusOfButton(generateArrayButton);
-	changeStatusOfButton(sizeOfArray);
-	changeStatusOfButton(bubbleSortBtn);
-	changeStatusOfButton(insertionSortBtn);
-	changeStatusOfButton(quickSortBtn);
-	changeStatusOfButton(mergeSortBtn);
-	selectionSortBtn.classList.add('btn-warning');
-	selectionSortBtn.classList.add('insortingProcess');
-	algorithmPopup.classList.add('popOut');
+
+	handleButtonStatus(selectionSortBtn);
+	popOutIndicator(selectionSortBtn);
 	algorithmPopup.innerHTML = selectionSortAlgo;
 	await selectionSort();
-	selectionSortBtn.classList.remove('insortingProcess');
-	selectionSortBtn.classList.remove('btn-warning');
-	algorithmPopup.innerHTML = ``;
-	changeStatusOfButton(mergeSortBtn);
-	changeStatusOfButton(quickSortBtn);
-	changeStatusOfButton(insertionSortBtn);
-	changeStatusOfButton(bubbleSortBtn);
-	changeStatusOfButton(sizeOfArray);
-	changeStatusOfButton(generateArrayButton);
+	closePopOut(selectionSortBtn);
+	handleButtonStatus(selectionSortBtn);
+
 });
 
 let selectionSortAlgo = 
