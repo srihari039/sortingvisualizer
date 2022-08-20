@@ -1,6 +1,6 @@
 # Sorting Visualizer
 
-website link: [https://sriharimalla.github.io/sortingvisualizer/]
+website link: [https://srihari039.github.io/sortingvisualizer/]
 
 ## JavaScript beginner friendly project
 
